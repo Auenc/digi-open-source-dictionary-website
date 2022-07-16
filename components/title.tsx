@@ -1,5 +1,7 @@
-import styles from '../styles/Title.module.css'
+import { useTranslation } from "next-i18next";
+import styles from "../styles/Title.module.css";
 
 export const Title: React.FC = () => {
-    return <h1 className={styles.title}>open celtic dictionary</h1>
-}
+  const { t } = useTranslation();
+  return <h1 className={styles.title}>{t("title")}</h1>;
+};

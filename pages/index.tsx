@@ -1,6 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,19 @@ const Home: NextPage = () => {
         <link rel="icon" href="/digi_v2.png" />
       </Head>
     </div>
-  )
+  );
+};
+
+interface serverSideProps {
+  locale: string
 }
 
-export default Home
+export const getStaticProps = async (params: { locale: string; }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(params.locale, ["common", "home"])),
+    },
+  };
+};
+
+export default Home;
