@@ -1,3 +1,11 @@
 {
-    "title": "geiriadur celtiadd agored"
+    "title": "geiriadur celtiadd agored",
+    "nav": {
+        "dictionary": "geiriadur",
+        "numbers": "rhifau",
+        "translations": "cyfieithiadau",
+        "help": "help",
+        "about": "am",
+        "settings": "gosodiadau"
+    }
 }

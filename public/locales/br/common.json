@@ -1,3 +1,11 @@
 {
-    "title": "ar geiriadur keltiek digor"
+    "title": "ar geiriadur keltiek digor",
+    "nav": {
+        "dictionary": "geriadur",
+        "numbers": "niveroù",
+        "translations": "troidigezhioù",
+        "help": "help",
+        "about": "diwar-benn",
+        "settings": "arventennoù"
+    }
 }

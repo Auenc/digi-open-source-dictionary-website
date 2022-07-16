@@ -1,3 +1,11 @@
 {
-    "title": "open celtic dictionary"
+    "title": "open celtic dictionary",
+    "nav": {
+        "dictionary": "dictionary",
+        "numbers": "numbers",
+        "translations": "translations",
+        "help": "help",
+        "about": "about",
+        "settings": "settings"
+    }
 }
