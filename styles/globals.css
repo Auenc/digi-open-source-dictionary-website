@@ -1,3 +1,13 @@
+:root {
+  --scottish-gaelic-color: #0065BF;
+  --breton-color: #4d5b6a;
+  --welsh-color: #dd0000;
+  --cornish-color: #f2a214;
+  --spanish-color: #fce205;
+  --german-color: #dd0000;
+  --irish-color: #009A44;
+}
+
 html,
 body {
   padding: 0;
