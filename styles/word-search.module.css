@@ -27,11 +27,13 @@
   grid-column-start: 1;
   grid-column-end: span 2;
   padding: 11px;
+  font-size: 1em;
 }
 
 .submit {
   text-transform: capitalize;
   padding: 11px;
+  font-size: 1em;
 }
 
 .search::placeholder {
