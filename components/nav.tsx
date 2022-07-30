@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import styles from "../styles/Nav.module.css";
+import styles from "../styles/nav.module.css";
 
 export const Nav: React.FC = () => {
   const { t } = useTranslation();

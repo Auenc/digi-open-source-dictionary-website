@@ -1,0 +1,56 @@
+.word-search-container {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  border-color: black;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  padding: 1em;
+}
+
+.word-search {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+}
+
+.input {
+  padding: 11px;
+  text-transform: capitalize;
+  font-size: 1em;
+  background-color: #efefef;
+  width: 250px;
+}
+
+.search {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  padding: 11px;
+}
+
+.submit {
+  text-transform: capitalize;
+  padding: 11px;
+}
+
+.search::placeholder {
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 800px) {
+  .word-search {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .search {
+    grid-row-start: initial;
+    grid-column-start: initial;
+    grid-column-end: initial;
+  }
+}

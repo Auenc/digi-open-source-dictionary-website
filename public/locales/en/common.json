@@ -7,5 +7,25 @@
         "help": "help",
         "about": "about",
         "settings": "settings"
+    },
+    "word-search": {
+        "search-select": {
+            "false": "search by dictionary entry",
+            "true": "extensive search"
+        },
+        "languages": {
+            "welsh": "welsh",
+            "english": "english"
+        },
+        "word-type": {
+            "verb": "verb",
+            "adjective": "adjective",
+            "noun": "noun",
+            "adposition": "adposition",
+            "conjunction": "conjunction",
+            "all": "all"
+        },
+        "search-box": "type a word here...",
+        "submit": "submit"
     }
 }

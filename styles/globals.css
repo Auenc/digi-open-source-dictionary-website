@@ -6,14 +6,14 @@
   --spanish-color: #fce205;
   --german-color: #dd0000;
   --irish-color: #009A44;
+  --background-color: #dcdcdc;
 }
 
 html,
 body {
   padding: 0px;
   margin: 0px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--background-color);
 }
 
 a {

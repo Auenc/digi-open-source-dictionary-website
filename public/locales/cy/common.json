@@ -7,5 +7,25 @@
         "help": "help",
         "about": "am",
         "settings": "gosodiadau"
+    },
+    "word-search": {
+        "search-select": {
+            "false": "chwilio yn ôl cofnod geiriadur",
+            "true": "chwilio helaeth"
+        },
+        "languages": {
+            "welsh": "cymraeg",
+            "english": "saesneg"
+        },
+        "word-type": {
+            "verb": "berf",
+            "adjective": "ansoddair",
+            "noun": "enw",
+            "adposition": "arddodiad",
+            "conjunction": "conjunction",
+            "all": "popeth"
+        },
+        "search-box": "teipiwch air yma...",
+        "submit": "cyflwyno"
     }
 }

@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import styles from "../styles/Title.module.css";
+import styles from "../styles/title.module.css";
 
 export const Title: React.FC = () => {
   const { t } = useTranslation();
