@@ -1,26 +1,26 @@
 :root {
-  --scottish-gaelic-color: #0065BF;
-  --breton-color: #4d5b6a;
-  --welsh-color: #dd0000;
-  --cornish-color: #f2a214;
-  --spanish-color: #fce205;
-  --german-color: #dd0000;
-  --irish-color: #009A44;
-  --background-color: #dcdcdc;
+    --scottish-gaelic-color: #0065bf;
+    --breton-color: #4d5b6a;
+    --welsh-color: #dd0000;
+    --cornish-color: #f2a214;
+    --spanish-color: #fce205;
+    --german-color: #dd0000;
+    --irish-color: #009a44;
+    --background-color: #dcdcdc;
 }
 
 html,
 body {
-  padding: 0px;
-  margin: 0px;
-  background-color: var(--background-color);
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--background-color);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
