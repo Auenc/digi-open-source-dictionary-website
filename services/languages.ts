@@ -73,7 +73,7 @@ export const SearchWord = async (
     word: string,
     type: string
 ): Promise<Word | null> => {
-    const api = new OSDP('https://api.opensourcedict.org/')
+    const api = new OSDP(process.env.API_URL as string)
     const result = await api.get({
         lang: dict as OLanguage,
         search: !!search,
