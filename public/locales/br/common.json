@@ -7,5 +7,31 @@
         "help": "help",
         "about": "diwar-benn",
         "settings": "arventennoù"
+    },
+    "word-search": {
+        "search-select": {
+            "false": "klask ur ger er geriadur",
+            "true": "klask araokaet"
+        },
+        "languages": {
+            "welsh": "kembraeg",
+            "english": "saoznek",
+            "breton": "brezhoneg",
+            "cornish": "kernaweg",
+            "german": "german",
+            "irish": "gouzeleg iwerzhon",
+            "scottish-gaelic": "gouezeleg bro-skos",
+            "spanish": "spanish"
+        },
+        "word-type": {
+            "verb": "verb",
+            "adjective": "anv-gwan",
+            "noun": "anv",
+            "adposition": "araogenn",
+            "conjunction": "conjunction",
+            "all": "pep-tra"
+        },
+        "search-box": "skrivit ur ger amañ...",
+        "submit": "kas"
     }
 }

@@ -15,7 +15,13 @@
         },
         "languages": {
             "welsh": "welsh",
-            "english": "english"
+            "english": "english",
+            "breton": "breton",
+            "cornish": "cornish",
+            "german": "german",
+            "irish": "irish",
+            "scottish-gaelic": "scottish gaelic",
+            "spanish": "spanish"
         },
         "word-type": {
             "verb": "verb",

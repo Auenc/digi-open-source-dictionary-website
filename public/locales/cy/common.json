@@ -15,7 +15,13 @@
         },
         "languages": {
             "welsh": "cymraeg",
-            "english": "saesneg"
+            "english": "saesneg",
+            "breton": "llydaweg",
+            "cornish": "cernyweg",
+            "german": "almaeneg",
+            "irish": "gwyddeleg",
+            "scottish-gaelic": "gaeleg yr alban",
+            "spanish": "sbaeneg"
         },
         "word-type": {
             "verb": "berf",

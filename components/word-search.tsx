@@ -1,17 +1,30 @@
 import { useTranslation } from "next-i18next";
+import { ChangeEvent, useContext } from "react";
+import { LanguageContext } from "../contexts/language";
 import { SupportedWordTypes } from "../models/words";
 import { SupportedLanguages } from "../services/languages";
 import styles from "../styles/word-search.module.css";
 
 export const WordSearch: React.FC = () => {
+  const { language, changeLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
+
+  const handleLanguageSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    const newLangCode = e.target.value
+    const language = SupportedLanguages.find(lang => lang.code === newLangCode)
+    if(!language) {
+      throw new Error("non-support language selected")
+    }
+    changeLanguage(language)
+  }
+
   const LanguageSelect: React.FC = () => {
     const languageOpts = SupportedLanguages.map((lang) => (
       <option key={`lang-select-${lang.code}`} value={lang.code}>
         {t(`word-search.${lang.name}`)}
       </option>
     ));
-    return <select className={styles.input}>{languageOpts}</select>;
+    return <select value={language.code} onChange={handleLanguageSelect} className={styles.input}>{languageOpts}</select>;
   };
 
   const WordTypeSelect: React.FC = () => {
@@ -45,7 +58,9 @@ export const WordSearch: React.FC = () => {
           type="text"
           placeholder={t("word-search.search-box")}
         />
-        <button className={styles.submit} type="submit">{t("word-search.submit")}</button>
+        <button className={styles.submit} type="submit">
+          {t("word-search.submit")}
+        </button>
       </div>
     </div>
   );
