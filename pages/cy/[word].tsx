@@ -1,10 +1,10 @@
-import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
+import { GetServerSidePropsContext } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import {
     CreateGetServerSideProps,
     WordPage,
     WordPageProps,
-} from '../../components/word-page/word-page.factory'
+} from '../../components/dictionary/word-page/word-page.factory'
 
 const dict = 'cy'
 export const getServerSideProps = async (

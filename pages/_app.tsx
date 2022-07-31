@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { Layout } from '../components/layout'
 import { appWithTranslation } from 'next-i18next'
 import { LanguageContext } from '../contexts/language'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
     LanguageFromCode,
     LanguageWelsh,
@@ -15,9 +15,11 @@ import { NextRouter, useRouter, withRouter } from 'next/router'
 const isWordPage = (router: NextRouter): boolean =>
     router.pathname.includes('[word]')
 
+const isDictIndex = (router: NextRouter): boolean => router.pathname.length <= 4
+
 const getInitialLanguage = (router: NextRouter): Language => {
     // check if path is word-info
-    if (!isWordPage(router)) {
+    if (!isWordPage(router) && !isDictIndex(router)) {
         return LanguageWelsh
     }
     const lang = router.pathname.replaceAll('[word]', '').replaceAll('/', '')
@@ -30,11 +32,25 @@ const getInitialLanguage = (router: NextRouter): Language => {
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
+
     const initialLanguage = getInitialLanguage(router)
     const [language, setLanguage] = useState<Language>(initialLanguage)
-    if (isWordPage(router) && language.code !== initialLanguage.code) {
+    if (
+        (isWordPage(router) || isDictIndex(router)) &&
+        language.code !== initialLanguage.code
+    ) {
         setLanguage(initialLanguage)
     }
+    console.log('initialLang', initialLanguage, language, isDictIndex(router))
+
+    const { pathname, locale } = router
+
+    useEffect(() => {
+        if (pathname === '') {
+            router.push(`/${locale}/cy/`)
+        }
+    }, [pathname, locale, router])
+
     return (
         <>
             <LanguageContext.Provider

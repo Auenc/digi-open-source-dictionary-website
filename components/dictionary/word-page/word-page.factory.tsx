@@ -7,13 +7,11 @@ import {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRouter } from 'next/router'
 import { Word } from 'osdpjs'
-import { SearchWord } from '../../services/languages'
-import { WordSearch } from '../word-search'
-import styles from '../../styles/word.module.css'
+import { SearchWord } from '../../../services/languages'
+import { WordSearch } from '../../word-search'
+import styles from '../../../styles/word.module.css'
 import Head from 'next/head'
-import { WordInfo } from '../word-info'
-
-// const fs = require('fs')
+import { WordInfo } from '../../word-info'
 
 type getServerProps = (
     dict: string,

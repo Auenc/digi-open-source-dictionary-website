@@ -4,7 +4,7 @@ import {
     CreateGetServerSideProps,
     WordPage,
     WordPageProps,
-} from '../../components/word-page/word-page.factory'
+} from '../../components/dictionary/word-page/word-page.factory'
 
 const dict = 'br'
 export const getServerSideProps = async (
