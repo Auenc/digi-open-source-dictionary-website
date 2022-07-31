@@ -10,7 +10,7 @@ import styles from '../styles/word-search.module.css'
 export interface WordSearchProps {
     initialWordType: string
     initialSearchSelect: string
-    initialWordToSearch: string,
+    initialWordToSearch: string
     result: Word | null | undefined
 }
 
@@ -18,7 +18,7 @@ export const WordSearch: React.FC<WordSearchProps> = ({
     initialWordType,
     initialSearchSelect,
     initialWordToSearch,
-    result
+    result,
 }) => {
     const { language, changeLanguage } = useContext(LanguageContext)
     const [wordType, setWordType] = useState<string>(initialWordType)
@@ -29,10 +29,9 @@ export const WordSearch: React.FC<WordSearchProps> = ({
     const { t } = useTranslation()
     const router = useRouter()
 
-    if(result && wordToSearch !== result.normalForm) {
+    if (result && wordToSearch !== result.normalForm) {
         setWordToSearch(result.normalForm)
     }
-
 
     const handleLanguageSelect = (e: ChangeEvent<HTMLSelectElement>) => {
         const newLangCode = e.target.value
@@ -100,15 +99,20 @@ export const WordSearch: React.FC<WordSearchProps> = ({
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
-        router.push({
-            pathname: '/',
-            query: {
-                dict: language.code,
-                word: wordToSearch,
-                type: wordType,
-                search: selectSearch,
+        const { locale } = router
+        const url = `/${locale}/${language.code}/${wordToSearch}/`
+        console.log('locale', locale)
+        router.push(
+            {
+                pathname: url,
+                query: {
+                    type: wordType,
+                    search: selectSearch,
+                },
             },
-        })
+            url,
+            { locale: locale }
+        )
     }
 
     return (

@@ -104,11 +104,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
                             <Link
                                 key={`translation-link-${translation.lang}-${translation.value}`}
                                 href={{
-                                    pathname: '/',
-                                    query: {
-                                        dict: translation.lang,
-                                        word: translation.value,
-                                    },
+                                    pathname: `/${translation.lang}/${translation.value}`,
                                 }}
                             >
                                 {translation.value}

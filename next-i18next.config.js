@@ -5,4 +5,5 @@ module.exports = {
         locales: ['en', 'cy', 'br'],
         defaultLocale: 'en',
     },
+    trailingSlash: true
 }

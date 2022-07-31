@@ -1,18 +1,31 @@
-import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next'
+import {
+    GetServerSideProps,
+    GetServerSidePropsContext,
+    GetServerSidePropsResult,
+    NextPage,
+} from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { Word } from 'osdpjs'
-import { WordInfo } from '../components/word-info'
-import { WordSearch } from '../components/word-search'
-import { SearchWord } from '../services/languages'
-import styles from '../styles/word.module.css'
+import { SearchWord } from '../../services/languages'
+import { WordSearch } from '../word-search'
+import styles from '../../styles/word.module.css'
+import Head from 'next/head'
+import { WordInfo } from '../word-info'
 
-export const getServerSideProps: GetServerSideProps = async (
+// const fs = require('fs')
+
+type getServerProps = (
+    dict: string,
     context: GetServerSidePropsContext
-) => {
-    let [dict, word] = context.query.word as string[]
-    let { type, search } = context.query
-    const { locale } = context
+) => Promise<WordPageProps>
+
+export const CreateGetServerSideProps: getServerProps = async (
+    dict: string,
+    context: GetServerSidePropsContext
+): Promise<WordPageProps> => {
+    let { type, search, word } = context.query
+
     if (!word) {
         word = ''
     }
@@ -22,29 +35,17 @@ export const getServerSideProps: GetServerSideProps = async (
     if (!search) {
         search = 'false'
     }
-    if (!dict) {
-        dict = 'cy'
-    }
     const wordResult = await SearchWord(
-        dict as string,
+        dict,
         search as string,
         word as string,
         type as string
     )
-
-    console.log('got my word bro', dict, word)
-
     return {
-        props: {
-            wordToSearch: word,
-            type: type,
-            search: search,
-            result: wordResult,
-            ...(await serverSideTranslations(locale as string, [
-                'common',
-                'home',
-            ])),
-        },
+        wordToSearch: word as string,
+        type: type as string,
+        search: search as string,
+        result: wordResult,
     }
 }
 
@@ -52,16 +53,14 @@ export interface WordPageProps {
     wordToSearch: string
     type: string
     search: string
-    result: Word
+    result: Word | null
 }
 
-export const WordPage: NextPage<WordPageProps> = ({
-    wordToSearch,
-    type,
-    search,
-    result,
-}) => {
-    console.log('result', result)
+export const WordPage: NextPage<WordPageProps> = (props) => {
+    const { wordToSearch, type, search, result } = props
+    const router = useRouter()
+    const { locale } = router
+    console.log('result', result, locale, props)
     return (
         <>
             <WordSearch
@@ -79,10 +78,8 @@ export const WordPage: NextPage<WordPageProps> = ({
                     />
                     <link rel="icon" href="/digi_v2.png" />
                 </Head>
-                <WordInfo word={result} />
+                {result && <WordInfo word={result} />}
             </div>
         </>
     )
 }
-
-export default WordPage
