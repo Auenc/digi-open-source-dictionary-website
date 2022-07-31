@@ -98,7 +98,6 @@ export const SearchWord = async (
     word: string,
     type: string
 ): Promise<Word | null> => {
-    console.log('searching word', dict, search, word, type)
     if(!word) {
         return null
     }
