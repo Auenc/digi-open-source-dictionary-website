@@ -16,7 +16,9 @@
         "german": "almaeneg",
         "irish": "gwyddeleg",
         "scottish-gaelic": "gaeleg yr alban",
-        "spanish": "sbaeneg"
+        "spanish": "sbaeneg",
+        "norwegian": "norwyeg",
+        "french": "ffraneg"
     },
     "word-type": {
         "verb": "berf",
@@ -33,5 +35,37 @@
         },
         "search-box": "teipiwch air yma...",
         "submit": "cyflwyno"
+    },
+    "word-info": {
+        "basic-info": {
+            "title": "gwybodaeth sylfaenol",
+            "language": "iath",
+            "type": "math",
+            "status": "statws",
+            "external-sites": "gwefannau allonol"
+        },
+        "translations": {
+            "title": "cyfieithiadau"
+        },
+        "mutations": {
+            "title": "treigladau",
+            "unmutated": "cychwynnol",
+            "nasal": "trwynol",
+            "aspirate": "llaes",
+            "soft": "meddal"
+        },
+        "conjugations": {
+            "title": "rhediadau",
+            "singular": "unigol",
+            "plural": "lluosog",
+            "first": "cyntaf",
+            "second": "ail",
+            "third": "trydydd",
+            "conditional": "yr amodol",
+            "future": "y dyfodol",
+            "pluperfect": "pluperfect",
+            "imperative": "imperative",
+            "preterite": "y gorffennol"
+        }
     }
 }

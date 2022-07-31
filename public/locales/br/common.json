@@ -16,7 +16,9 @@
         "german": "german",
         "irish": "gouzeleg iwerzhon",
         "scottish-gaelic": "gouezeleg bro-skos",
-        "spanish": "spanish"
+        "spanish": "spanish",
+        "norwegian": "norvegeg",
+        "french": "french"
     },
     "word-type": {
         "verb": "verb",
@@ -33,5 +35,37 @@
         },
         "search-box": "skrivit ur ger amañ...",
         "submit": "kas"
+    },
+    "word-info": {
+        "basic-info": {
+            "title": "titouroù diazez",
+            "language": "yezh",
+            "type": "doare",
+            "status": "statud",
+            "external-sites": "external sites"
+        },
+        "translations": {
+            "title": "troidigezhioù"
+        },
+        "mutations": {
+            "title": "kemmadurioù",
+            "unmutated": "digemm",
+            "nasal": "dre fri",
+            "aspirate": "dre c'hwezhadenniñ",
+            "soft": "dre vlotaat"
+        },
+        "conjugations": {
+            "title": "displegadurioù",
+            "singular": "unander",
+            "plural": "liester",
+            "first": "kentañ",
+            "second": "eil",
+            "third": "trede",
+            "conditional": "doare divizout",
+            "future": "amzer da zont",
+            "pluperfect": "pluperfect",
+            "imperative": "doare-gourc'hemenn",
+            "preterite": "amzer dremenet strizh"
+        }
     }
 }

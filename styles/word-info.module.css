@@ -7,7 +7,7 @@
     max-width: 766px;
 }
 
-.word-info h1{
+.word-info h1, .word-info h2{
     text-transform: capitalize;
 }
 

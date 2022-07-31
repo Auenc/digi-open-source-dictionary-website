@@ -61,7 +61,6 @@ const Home: NextPage<HomeProps> = ({ wordToSearch, type, search, result }) => {
         type = result.type
         wordToSearch = result.normalForm
     }
-    console.log('word to search', wordToSearch)
     return (
         <>
             <WordSearch
