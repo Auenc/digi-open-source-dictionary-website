@@ -30,6 +30,11 @@
     font-weight: bold;
 }
 
+.info-table td a {
+    display: block;
+    margin-right: 0.5em;
+}
+
 .external-link {
     display: block;
     text-decoration: underline;
