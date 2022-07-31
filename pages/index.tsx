@@ -59,13 +59,16 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ wordToSearch, type, search, result }) => {
     if (result) {
         type = result.type
+        wordToSearch = result.normalForm
     }
+    console.log('word to search', wordToSearch)
     return (
         <>
             <WordSearch
                 initialSearchSelect={search}
                 initialWordToSearch={wordToSearch}
                 initialWordType={type}
+                result={result}
             />
             <div className={styles.container}>
                 <Head>

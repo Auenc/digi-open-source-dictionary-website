@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
+import { Word } from 'osdpjs'
 import { ChangeEvent, FormEvent, useContext, useState } from 'react'
 import { LanguageContext } from '../contexts/language'
 import { SupportedWordTypes } from '../models/words'
@@ -9,13 +10,15 @@ import styles from '../styles/word-search.module.css'
 export interface WordSearchProps {
     initialWordType: string
     initialSearchSelect: string
-    initialWordToSearch: string
+    initialWordToSearch: string,
+    result: Word | null | undefined
 }
 
 export const WordSearch: React.FC<WordSearchProps> = ({
     initialWordType,
     initialSearchSelect,
     initialWordToSearch,
+    result
 }) => {
     const { language, changeLanguage } = useContext(LanguageContext)
     const [wordType, setWordType] = useState<string>(initialWordType)
@@ -25,6 +28,11 @@ export const WordSearch: React.FC<WordSearchProps> = ({
         useState<string>(initialWordToSearch)
     const { t } = useTranslation()
     const router = useRouter()
+
+    if(result && wordToSearch !== result.normalForm) {
+        setWordToSearch(result.normalForm)
+    }
+
 
     const handleLanguageSelect = (e: ChangeEvent<HTMLSelectElement>) => {
         const newLangCode = e.target.value
