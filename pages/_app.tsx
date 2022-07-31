@@ -41,7 +41,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     ) {
         setLanguage(initialLanguage)
     }
-    console.log('initialLang', initialLanguage, language, isDictIndex(router))
 
     const { pathname, locale } = router
 
