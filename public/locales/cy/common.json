@@ -8,28 +8,28 @@
         "about": "am",
         "settings": "gosodiadau"
     },
+    "languages": {
+        "welsh": "cymraeg",
+        "english": "saesneg",
+        "breton": "llydaweg",
+        "cornish": "cernyweg",
+        "german": "almaeneg",
+        "irish": "gwyddeleg",
+        "scottish-gaelic": "gaeleg yr alban",
+        "spanish": "sbaeneg"
+    },
+    "word-type": {
+        "verb": "berf",
+        "adjective": "ansoddair",
+        "noun": "enw",
+        "adposition": "arddodiad",
+        "conjunction": "conjunction",
+        "all": "popeth"
+    },
     "word-search": {
         "search-select": {
             "false": "chwilio yn ôl cofnod geiriadur",
             "true": "chwilio helaeth"
-        },
-        "languages": {
-            "welsh": "cymraeg",
-            "english": "saesneg",
-            "breton": "llydaweg",
-            "cornish": "cernyweg",
-            "german": "almaeneg",
-            "irish": "gwyddeleg",
-            "scottish-gaelic": "gaeleg yr alban",
-            "spanish": "sbaeneg"
-        },
-        "word-type": {
-            "verb": "berf",
-            "adjective": "ansoddair",
-            "noun": "enw",
-            "adposition": "arddodiad",
-            "conjunction": "conjunction",
-            "all": "popeth"
         },
         "search-box": "teipiwch air yma...",
         "submit": "cyflwyno"

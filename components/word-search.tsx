@@ -40,7 +40,7 @@ export const WordSearch: React.FC<WordSearchProps> = ({
     const LanguageSelect: React.FC = () => {
         const languageOpts = SupportedLanguages.map((lang) => (
             <option key={`lang-select-${lang.code}`} value={lang.code}>
-                {t(`word-search.${lang.name}`)}
+                {t(`${lang.name}`)}
             </option>
         ))
         return (
@@ -58,7 +58,7 @@ export const WordSearch: React.FC<WordSearchProps> = ({
         const typeOpts = Object.entries(SupportedWordTypes).map(
             ([wordType, translation]) => (
                 <option value={wordType} key={`word-type-select-${wordType}`}>
-                    {t(`word-search.${translation}`)}
+                    {t(`${translation}`)}
                 </option>
             )
         )

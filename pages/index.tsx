@@ -28,7 +28,6 @@ export const getServerSideProps: GetServerSideProps = async (
     if (!dict) {
         dict = 'cy'
     }
-
     const wordResult = await SearchWord(
         dict as string,
         search as string,

@@ -51,6 +51,18 @@ export const LanguageSpanish: Language = {
     class: 'spanish',
 }
 
+export const LanguageFrench: Language = {
+    code: 'fr',
+    name: 'languages.french',
+    class: 'french'
+}
+
+export const LanguageNorwegian: Language = {
+    code: 'nn',
+    name: 'languages.norwegian',
+    class: 'norwegian'
+}
+
 export const SupportedLanguages: Language[] = [
     LanguageBreton,
     LanguageCornish,
@@ -67,12 +79,29 @@ export const SupportedLocales: Language[] = [
     LanguageEnglish,
 ]
 
+export const AllLanguages: Language[] = [
+    LanguageBreton,
+    LanguageCornish,
+    LanguageGerman,
+    LanguageIrish,
+    LanguageScottishGaelic,
+    LanguageSpanish,
+    LanguageWelsh,
+    LanguageEnglish,
+    LanguageFrench,
+    LanguageNorwegian
+]
+
 export const SearchWord = async (
     dict: string,
     search: string,
     word: string,
     type: string
 ): Promise<Word | null> => {
+    console.log('searching word', dict, search, word, type)
+    if(!word) {
+        return null
+    }
     const api = new OSDP(process.env.API_URL as string)
     const result = await api.get({
         lang: dict as OLanguage,
@@ -84,4 +113,17 @@ export const SearchWord = async (
         return result[0]
     }
     return null
+}
+
+export const LanguageFromCode = (code: string): Language | null => {
+    const language = AllLanguages.find((lang) => lang.code === code)
+    if (language) {
+        return language
+    }
+    return null
+}
+
+export const IsSupported = (code: string): boolean => {
+    const found = SupportedLanguages.find(lang => lang.code === code)
+    return found != null
 }
