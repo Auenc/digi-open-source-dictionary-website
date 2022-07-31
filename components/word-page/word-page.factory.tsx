@@ -60,7 +60,6 @@ export const WordPage: NextPage<WordPageProps> = (props) => {
     const { wordToSearch, type, search, result } = props
     const router = useRouter()
     const { locale } = router
-    console.log('result', result, locale, props)
     return (
         <>
             <WordSearch

@@ -98,7 +98,7 @@ export const WordSearch: React.FC<WordSearchProps> = ({
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
-        console.log('word to search', wordToSearch)
+        
         const { locale } = router
         const url = `/${locale}/${language.code}/${wordToSearch}/`
         router.push(
@@ -118,7 +118,6 @@ export const WordSearch: React.FC<WordSearchProps> = ({
         const newVal = e.target.value
         setWordToSearch(newVal)
         setStartedNewSearch(true)
-        console.log('set newVal', newVal)
     }
 
     return (

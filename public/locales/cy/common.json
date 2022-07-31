@@ -52,7 +52,9 @@
             "unmutated": "cychwynnol",
             "nasal": "trwynol",
             "aspirate": "llaes",
-            "soft": "meddal"
+            "soft": "meddal",
+            "mixed": "cymysg",
+            "hard": "caled"
         },
         "conjugations": {
             "title": "rhediadau",
@@ -65,7 +67,12 @@
             "future": "y dyfodol",
             "pluperfect": "pluperfect",
             "imperative": "imperative",
-            "preterite": "y gorffennol"
+            "preterite": "y gorffennol",
+            "subjunctive_imperfect": "subjunctive imperfect",
+            "imperfect": "imperfect",
+            "perfect": "perfect",
+            "present_future": "present / future",
+            "subjunctive_present_future": "subjunctive present / future"
         }
     }
 }

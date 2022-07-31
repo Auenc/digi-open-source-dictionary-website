@@ -52,7 +52,9 @@
             "unmutated": "digemm",
             "nasal": "dre fri",
             "aspirate": "dre c'hwezhadenniñ",
-            "soft": "dre vlotaat"
+            "soft": "dre vlotaat",
+            "mixed": "masket",
+            "hard": "kaletaat"
         },
         "conjugations": {
             "title": "displegadurioù",
@@ -65,7 +67,12 @@
             "future": "amzer da zont",
             "pluperfect": "pluperfect",
             "imperative": "doare-gourc'hemenn",
-            "preterite": "amzer dremenet strizh"
+            "preterite": "amzer dremenet strizh",
+            "subjunctive_imperfect": "subjunctive imperfect",
+            "imperfect": "imperfect",
+            "perfect": "perfect",
+            "present_future": "present / future",
+            "subjunctive_present_future": "subjunctive present / future"
         }
     }
 }

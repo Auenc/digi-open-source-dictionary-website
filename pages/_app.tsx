@@ -31,7 +31,6 @@ const getInitialLanguage = (router: NextRouter): Language => {
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
     const initialLanguage = getInitialLanguage(router)
-    console.log('init lang', initialLanguage)
     const [language, setLanguage] = useState<Language>(initialLanguage)
     if (isWordPage(router) && language.code !== initialLanguage.code) {
         setLanguage(initialLanguage)
