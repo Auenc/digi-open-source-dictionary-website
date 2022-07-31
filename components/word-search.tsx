@@ -101,7 +101,6 @@ export const WordSearch: React.FC<WordSearchProps> = ({
         console.log('word to search', wordToSearch)
         const { locale } = router
         const url = `/${locale}/${language.code}/${wordToSearch}/`
-        console.log('locale', locale)
         router.push(
             {
                 pathname: url,
@@ -110,7 +109,7 @@ export const WordSearch: React.FC<WordSearchProps> = ({
                     search: selectSearch,
                 },
             },
-            url,
+            '',
             { locale: locale }
         )
     }
