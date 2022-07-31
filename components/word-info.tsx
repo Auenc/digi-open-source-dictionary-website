@@ -163,7 +163,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
         ))
         return (
             <>
-                <h2>Mutations</h2>
+                <h2>{t('word-info.mutations.title')}</h2>
                 <table className={styles['info-table']}>
                     <thead>
                         <tr>{headers}</tr>
@@ -217,7 +217,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
         )
         return (
             <>
-                <h2>Conjugations</h2>
+                <h2>{t('word-info.conjugations.title')}</h2>
                 {conjugations}
             </>
         )
