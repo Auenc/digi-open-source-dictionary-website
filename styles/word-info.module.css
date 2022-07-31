@@ -1,0 +1,56 @@
+.word-info {
+    display: block;
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 2px solid #000;
+    min-width: 766px;
+    max-width: 766px;
+}
+
+.word-info h1{
+    text-transform: capitalize;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.5em;
+    table-layout: fixed;
+}
+
+.info-table td, .info-table .header {
+    border: 2px solid #000;
+    padding: 10px;
+    text-transform: capitalize;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.info-table .header{
+    text-align: left;
+    background-color: #dcdcdc;
+    font-weight: bold;
+}
+
+.info-table td a {
+    display: block;
+    margin-right: 0.5em;
+}
+
+.external-link {
+    display: block;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+    .word-info {
+        border: none;
+        min-width: inherit;
+        max-width: inherit;
+        width: 100%;
+        padding: 0.5em;
+    }
+    .info-table td, .info-table .header {
+        padding: 10px 3px;
+    }
+}

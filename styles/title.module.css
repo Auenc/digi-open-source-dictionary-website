@@ -1,0 +1,38 @@
+.title {
+    color: white;
+    text-align: center;
+    padding: 0.8em;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid #000000;
+    text-transform: capitalize;
+}
+
+.welsh {
+    background-color: var(--welsh-color);
+}
+
+.breton {
+    background-color: var(--breton-color);
+}
+
+.scottish-gaelic {
+    background-color: var(--scottish-gaelic-color);
+}
+
+.cornish {
+    background-color: var(--cornish-color);
+}
+
+.spanish {
+    background-color: var(--spanish-color);
+}
+
+.german {
+    background-color: var(--german-color);
+}
+
+.irish {
+    background-color: var(--irish-color);
+}

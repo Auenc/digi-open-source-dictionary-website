@@ -7,5 +7,31 @@
         "help": "help",
         "about": "about",
         "settings": "settings"
+    },
+    "languages": {
+        "welsh": "welsh",
+        "english": "english",
+        "breton": "breton",
+        "cornish": "cornish",
+        "german": "german",
+        "irish": "irish",
+        "scottish-gaelic": "scottish gaelic",
+        "spanish": "spanish"
+    },
+    "word-type": {
+        "verb": "verb",
+        "adjective": "adjective",
+        "noun": "noun",
+        "adposition": "adposition",
+        "conjunction": "conjunction",
+        "all": "all"
+    },
+    "word-search": {
+        "search-select": {
+            "false": "search by dictionary entry",
+            "true": "extensive search"
+        },
+        "search-box": "type a word here...",
+        "submit": "submit"
     }
 }
