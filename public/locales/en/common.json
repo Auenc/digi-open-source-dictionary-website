@@ -16,7 +16,9 @@
         "german": "german",
         "irish": "irish",
         "scottish-gaelic": "scottish gaelic",
-        "spanish": "spanish"
+        "spanish": "spanish",
+        "norwegian": "norwegian",
+        "french": "french"
     },
     "word-type": {
         "verb": "verb",
@@ -33,5 +35,37 @@
         },
         "search-box": "type a word here...",
         "submit": "submit"
+    },
+    "word-info": {
+        "basic-info": {
+            "title": "basic information",
+            "language": "language",
+            "type": "type",
+            "status": "status",
+            "external-sites": "external sites"
+        },
+        "translations": {
+            "title": "translations"
+        },
+        "mutations": {
+            "title": "mutations",
+            "unmutated": "unmutated",
+            "nasal": "nasal",
+            "aspirate": "aspirate",
+            "soft": "soft"
+        },
+        "conjugations": {
+            "title": "conjugations",
+            "singular": "singular",
+            "plural": "plural",
+            "first": "first",
+            "second": "second",
+            "third": "third",
+            "conditional": "conditional",
+            "future": "future",
+            "plurperfect": "plurperfect",
+            "imperative": "imperative",
+            "preterite": "preterite"
+        }
     }
 }

@@ -43,23 +43,23 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
     const BasicInfo: React.FC = () => {
         return (
             <>
-                <h2>Basic Information</h2>
+                <h2>{t("word-info.basic-info.title")}</h2>
                 <table className={styles['info-table']}>
                     <tbody>
                         <tr>
-                            <td className={styles.header}>Language</td>
+                            <td className={styles.header}>{t("word-info.basic-info.language")}</td>
                             <td>{t(language?.name)}</td>
                         </tr>
                         <tr>
-                            <td className={styles.header}>Type</td>
+                            <td className={styles.header}>{t("word-info.basic-info.type")}</td>
                             <td>{t(`word-type.${word.type}`)}</td>
                         </tr>
                         <tr>
-                            <td className={styles.header}>Status</td>
+                            <td className={styles.header}>{t("word-info.basic-info.status")}</td>
                             <td>{confirmed}</td>
                         </tr>
                         <tr>
-                            <td className={styles.header}>External sites</td>
+                            <td className={styles.header}>{t("word-info.basic-info.external-sites")}</td>
                             <td>
                                 {createExternalLinks(word).map((link) => (
                                     <a
@@ -127,7 +127,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
         )
         return (
             <>
-                <h2>Translations</h2>
+                <h2>{t("word-info.translations.title")}</h2>
                 <table className={styles['info-table']}>
                     <tbody>{rows}</tbody>
                 </table>
@@ -141,7 +141,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
         }
         const mutations = [
             {
-                name: 'Unmutated',
+                name: 'unmutated',
                 value: word.mutations.init,
             },
             ...Object.entries(word.mutations)
@@ -154,7 +154,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
         const headers = mutations.map(({ name }) => {
             return (
                 <th key={`mutation-header-${name}`} className={styles.header}>
-                    {name}
+                    {t(`word-info.mutations.${name}`)}
                 </th>
             )
         })
@@ -189,24 +189,24 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
                     >
                         <thead>
                             <tr>
-                                <th className={styles.header}>{name}</th>
-                                <th className={styles.header}>Singular</th>
-                                <th className={styles.header}>Plural</th>
+                                <th className={styles.header}>{t(`word-info.conjugations.${name}`)}</th>
+                                <th className={styles.header}>{t("word-info.conjugations.singular")}</th>
+                                <th className={styles.header}>{t("word-info.conjugations.plural")}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td className={styles.header}>First</td>
+                                <td className={styles.header}>{t("word-info.conjugations.first")}</td>
                                 <td>{conjugations.singFirst}</td>
                                 <td>{conjugations.plurFirst}</td>
                             </tr>
                             <tr>
-                                <td className={styles.header}>Second</td>
+                                <td className={styles.header}>{t("word-info.conjugations.second")}</td>
                                 <td>{conjugations.singSecond}</td>
                                 <td>{conjugations.plurSecond}</td>
                             </tr>
                             <tr>
-                                <td className={styles.header}>Third</td>
+                                <td className={styles.header}>{t("word-info.conjugations.third")}</td>
                                 <td>{conjugations.singThird}</td>
                                 <td>{conjugations.plurThird}</td>
                             </tr>
