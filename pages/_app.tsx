@@ -3,23 +3,53 @@ import type { AppProps } from 'next/app'
 import { Layout } from '../components/layout'
 import { appWithTranslation } from 'next-i18next'
 import { LanguageContext } from '../contexts/language'
-import { useState } from 'react'
-import { LanguageFromCode, LanguageWelsh, SupportedLanguages } from '../services/languages'
+import { useEffect, useState } from 'react'
+import {
+    LanguageFromCode,
+    LanguageWelsh,
+    SupportedLanguages,
+} from '../services/languages'
 import { Language } from '../models/language'
-import { useRouter, withRouter } from 'next/router'
+import { NextRouter, useRouter, withRouter } from 'next/router'
+
+const isWordPage = (router: NextRouter): boolean =>
+    router.pathname.includes('[word]')
+
+const isDictIndex = (router: NextRouter): boolean => router.pathname.length <= 4
+
+const getInitialLanguage = (router: NextRouter): Language => {
+    // check if path is word-info
+    if (!isWordPage(router) && !isDictIndex(router)) {
+        return LanguageWelsh
+    }
+    const lang = router.pathname.replaceAll('[word]', '').replaceAll('/', '')
+    const language = LanguageFromCode(lang)
+    if (!language) {
+        return LanguageWelsh
+    }
+    return language
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
-    const { dict } = router.query
-    const initialLanguage =
-        SupportedLanguages.find((lang) => lang.code === dict) || LanguageWelsh
+
+    const initialLanguage = getInitialLanguage(router)
     const [language, setLanguage] = useState<Language>(initialLanguage)
-    if(dict && language.code !== dict) {
-        const newLanguage = LanguageFromCode(dict as string)
-        if(newLanguage) {
-            setLanguage(newLanguage)
-        }
+    if (
+        (isWordPage(router) || isDictIndex(router)) &&
+        language.code !== initialLanguage.code
+    ) {
+        setLanguage(initialLanguage)
     }
+
+    const { pathname, locale } = router
+
+    useEffect(() => {
+        if (pathname === '') {
+            router.push(`/${locale}/cy/`)
+        }
+    }, [pathname, locale, router])
+
     return (
         <>
             <LanguageContext.Provider

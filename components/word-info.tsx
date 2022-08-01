@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Language, Translation, Word } from 'osdpjs'
 import { IsSupported, LanguageFromCode } from '../services/languages'
 import styles from '../styles/word-info.module.css'
@@ -27,6 +28,8 @@ const createExternalLinks = (word: Word): externalLink[] => {
 }
 
 export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
+    const router = useRouter()
+    const { locale } = router
     const { t } = useTranslation()
     if (!word) {
         return <></>
@@ -43,23 +46,31 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
     const BasicInfo: React.FC = () => {
         return (
             <>
-                <h2>{t("word-info.basic-info.title")}</h2>
+                <h2>{t('word-info.basic-info.title')}</h2>
                 <table className={styles['info-table']}>
                     <tbody>
                         <tr>
-                            <td className={styles.header}>{t("word-info.basic-info.language")}</td>
+                            <td className={styles.header}>
+                                {t('word-info.basic-info.language')}
+                            </td>
                             <td>{t(language?.name)}</td>
                         </tr>
                         <tr>
-                            <td className={styles.header}>{t("word-info.basic-info.type")}</td>
+                            <td className={styles.header}>
+                                {t('word-info.basic-info.type')}
+                            </td>
                             <td>{t(`word-type.${word.type}`)}</td>
                         </tr>
                         <tr>
-                            <td className={styles.header}>{t("word-info.basic-info.status")}</td>
+                            <td className={styles.header}>
+                                {t('word-info.basic-info.status')}
+                            </td>
                             <td>{confirmed}</td>
                         </tr>
                         <tr>
-                            <td className={styles.header}>{t("word-info.basic-info.external-sites")}</td>
+                            <td className={styles.header}>
+                                {t('word-info.basic-info.external-sites')}
+                            </td>
                             <td>
                                 {createExternalLinks(word).map((link) => (
                                     <a
@@ -104,11 +115,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
                             <Link
                                 key={`translation-link-${translation.lang}-${translation.value}`}
                                 href={{
-                                    pathname: '/',
-                                    query: {
-                                        dict: translation.lang,
-                                        word: translation.value,
-                                    },
+                                    pathname: `/${locale}/${translation.lang}/${translation.value}`,
                                 }}
                             >
                                 {translation.value}
@@ -127,7 +134,7 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
         )
         return (
             <>
-                <h2>{t("word-info.translations.title")}</h2>
+                <h2>{t('word-info.translations.title')}</h2>
                 <table className={styles['info-table']}>
                     <tbody>{rows}</tbody>
                 </table>
@@ -189,24 +196,36 @@ export const WordInfo: React.FC<WordInfoProps> = ({ word }) => {
                     >
                         <thead>
                             <tr>
-                                <th className={styles.header}>{t(`word-info.conjugations.${name}`)}</th>
-                                <th className={styles.header}>{t("word-info.conjugations.singular")}</th>
-                                <th className={styles.header}>{t("word-info.conjugations.plural")}</th>
+                                <th className={styles.header}>
+                                    {t(`word-info.conjugations.${name}`)}
+                                </th>
+                                <th className={styles.header}>
+                                    {t('word-info.conjugations.singular')}
+                                </th>
+                                <th className={styles.header}>
+                                    {t('word-info.conjugations.plural')}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td className={styles.header}>{t("word-info.conjugations.first")}</td>
+                                <td className={styles.header}>
+                                    {t('word-info.conjugations.first')}
+                                </td>
                                 <td>{conjugations.singFirst}</td>
                                 <td>{conjugations.plurFirst}</td>
                             </tr>
                             <tr>
-                                <td className={styles.header}>{t("word-info.conjugations.second")}</td>
+                                <td className={styles.header}>
+                                    {t('word-info.conjugations.second')}
+                                </td>
                                 <td>{conjugations.singSecond}</td>
                                 <td>{conjugations.plurSecond}</td>
                             </tr>
                             <tr>
-                                <td className={styles.header}>{t("word-info.conjugations.third")}</td>
+                                <td className={styles.header}>
+                                    {t('word-info.conjugations.third')}
+                                </td>
                                 <td>{conjugations.singThird}</td>
                                 <td>{conjugations.plurThird}</td>
                             </tr>

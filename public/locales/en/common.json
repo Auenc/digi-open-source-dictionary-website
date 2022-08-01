@@ -52,7 +52,9 @@
             "unmutated": "unmutated",
             "nasal": "nasal",
             "aspirate": "aspirate",
-            "soft": "soft"
+            "soft": "soft",
+            "mixed": "mixed",
+            "hard": "hard"
         },
         "conjugations": {
             "title": "conjugations",
@@ -65,7 +67,12 @@
             "future": "future",
             "pluperfect": "pluperfect",
             "imperative": "imperative",
-            "preterite": "preterite"
+            "preterite": "preterite",
+            "subjunctive_imperfect": "subjunctive imperfect",
+            "imperfect": "imperfect",
+            "perfect": "perfect",
+            "present_future": "present / future",
+            "subjunctive_present_future": "subjunctive present/ future"
         }
     }
 }
